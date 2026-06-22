@@ -1,164 +1,211 @@
 # Convenciones de Git
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-16
-> Autor: Por definir | Equipo: Por definir
+> Estado: 🟡 En progreso | Última actualización: 2026-06-21
+> Autor: Maria | Equipo: Por definir
 
-Este repositorio usa ramas protegidas, Pull Requests y Conventional Commits para mantener trazabilidad documental.
+Este documento define cómo se trabaja con Git en este repositorio: nomenclatura de ramas, formato de commits y el flujo de trabajo entre ramas. Para reglas de documentos, ver [documentation-rules.md](./documentation-rules.md).
 
-## Ramas protegidas
+## Contexto
 
-`dev`, `qa` y `main` representan ambientes padre y no se trabajan directamente.
+Con múltiples personas documentando al mismo tiempo es fácil generar conflictos, pisarse el trabajo o perder trazabilidad de qué cambió y por qué. Estas convenciones aseguran que el historial de Git sea legible, que los PRs sean revisables y que cualquier persona pueda entender el estado del proyecto con solo mirar las ramas activas.
 
-| Rama | Propósito | Regla |
-|------|-----------|-------|
-| `dev` | Integración de trabajo en desarrollo | Recibe PRs desde ramas hijas |
-| `qa` | Validación funcional y técnica | Recibe PRs o cherry-picks aprobados desde `dev` |
-| `main` | Producción / documentación estable | Recibe solo PRs desde `release/*` |
+## Contenido
 
-## Ramas documentales
+### Ramas principales
 
-| Tipo de rama | Cuándo usarla | Ejemplo | Tipo de commit |
-|--------------|---------------|---------|----------------|
-| `feat` | Documento nuevo | `feat/doc-api-guidelines` | `docs` |
-| `fix` | Corrección de contenido | `fix/doc-scope` | `fix` |
-| `chore` | Reorganización o renombrado | `chore/doc-move-adr-003` | `chore` |
-| `docs` | Actualización de documento existente | `docs/doc-service-catalog` | `docs` |
+Estas ramas existen siempre y nunca se trabaja directamente sobre ellas. Solo reciben cambios por Pull Request.
 
-El tipo de rama describe intención. El tipo del commit sigue Conventional Commits.
+| Rama | Propósito |
+|---|---|
+| `main` | Producción. Solo contiene documentación aprobada y estable |
+| `stg` | Staging. Pre-producción, validación final antes de main |
+| `qa` | Control de calidad. Validación antes de pasar a stg |
+| `develop` | Integración. Donde se juntan todas las ramas hijas |
 
-## Ramas por historia de usuario
+**Flujo entre ramas principales:**
 
-| Caso | Rama base | Formato | Ejemplo |
-|------|-----------|---------|---------|
-| Desarrollo de HU | `dev` | `hu-<numero>-dev` | `hu-01-dev` |
-| Ajuste o validación QA | `qa` | `hu-<numero>-qa` | `hu-01-qa` |
-| Release de iteración | `main` | `release/<iteracion>` | `release/iteration-01` |
-
-Las ramas `hu-*` son un caso especial para trazabilidad por historia. No siguen el formato `<tipo>/doc-*`.
-
-## Flujo hacia dev
-
-```bash
-git checkout dev
-git pull origin dev
-git checkout -b hu-01-dev
-
-git add <archivos>
-git commit -m "docs(04-requirements): add scheduling availability user story"
-git push origin hu-01-dev
+```
+develop → qa → stg → main
 ```
 
-Abrir PR de `hu-01-dev` hacia `dev`.
+Cada avance requiere que la rama destino acepte un PR desde la rama origen. Nunca se hace push directo.
 
-## Flujo hacia qa
+> ⚠️ Pendiente definir con el equipo:
+>
+> ¿Quién decide cuándo `develop` pasa a `qa`?
+>
+> ¿Es manual por el líder técnico o existe un criterio automático?
 
-Crear rama hija desde `qa`:
+---
 
-```bash
-git checkout qa
-git pull origin qa
-git checkout -b hu-01-qa
-```
+## Opción - Por hito completo
 
-Llevar cambios con merge cuando la HU completa pasa igual:
+`develop` pasa a `qa` cuando una sección completa está terminada; no se valida archivo por archivo.
 
-```bash
-git merge origin/hu-01-dev
-git push origin hu-01-qa
-```
-
-O con cherry-pick cuando solo pasan commits específicos:
-
-```bash
-git cherry-pick <commit-sha>
-git push origin hu-01-qa
-```
-
-Abrir PR de `hu-01-qa` hacia `qa`.
-
-## Release hacia main
-
-`main` representa documentación estable. Para producción, crear una rama release desde `main`:
-
-```bash
-git checkout main
-git pull origin main
-git checkout -b release/iteration-01
-```
-
-La rama release puede acumular varias HUs de una iteración:
-
-```bash
-git cherry-pick <commit-hu-01>
-git cherry-pick <commit-hu-02>
-git cherry-pick <commit-hu-03>
-git push origin release/iteration-01
-```
-
-Abrir PR de `release/iteration-01` hacia `main`.
-
-## Conventional Commits
-
-Formato obligatorio:
+### Ejemplo
 
 ```text
-<type>(NN-section): short description in English
+Toda la carpeta 00-governance
+mergeada a develop
+        ↓
+Se abre Pull Request
+develop → qa
+        ↓
+      Maria revisa
+        ↓
+Aprobado
+        ↓
+qa → stg → main
 ```
 
-Tipos permitidos:
+Por esta razón, es más conveniente revisar y aprobar toda la sección completa antes de promoverla a `qa`.
 
-| Tipo | Uso |
-|------|-----|
-| `docs` | Crear o actualizar documentación |
-| `fix` | Corregir contenido incorrecto |
-| `chore` | Mover, renombrar, reordenar o actualizar metadatos |
-| `refactor` | Reestructurar documentación sin cambiar significado |
+---
 
-No usar `feat`, `style`, `test`, `perf`, `build` ni `ci` para commits de este repositorio documental.
+### Ramas hijas (donde se trabaja)
 
-Ejemplos:
+Toda la documentación nueva o corregida se trabaja en ramas hijas que nacen de `develop` y regresan a `develop` por PR.
+
+**Patrón de nomenclatura:**
+
+```
+feat/doc-[sección]-[tema]   → contenido nuevo
+fix/doc-[sección]-[tema]    → corrección de contenido existente
+```
+
+- `[sección]` es el nombre de la carpeta sin el número (ej: `governance`, `context`, `microservices`).
+- `[tema]` describe el archivo o tópico concreto que se trabaja.
+- Todo en `kebab-case`, sin espacios ni mayúsculas.
+
+**Ejemplos con la estructura real del proyecto:**
+
+```
+feat/doc-governance-git-conventions
+feat/doc-governance-security-rules
+feat/doc-context-glossary
+feat/doc-context-overview
+feat/doc-domain-entities-and-rules
+feat/doc-domain-events
+feat/doc-requirements-non-functional
+feat/doc-requirements-user-stories
+feat/doc-architecture-overview
+feat/doc-data-models
+feat/doc-api-authentication
+feat/doc-uml-diagram-index
+feat/doc-microservices-iam-service-data-model
+feat/doc-microservices-scheduling-service-events
+feat/doc-microservices-audit-service-runbook
+feat/doc-microservices-actors-service-data-model
+fix/doc-governance-documentation-rules
+fix/doc-microservices-audit-service-data-model
+```
+
+---
+
+### Formato de commits
+
+Se usa **Conventional Commits** en inglés. La estructura es:
+
+```
+docs(NN-seccion): mensaje corto en presente
+```
+
+- `docs` es el tipo. Toda documentación usa `docs`.
+- `(NN-seccion)` es el número y nombre de la carpeta afectada.
+- El mensaje describe qué se hizo, en presente, en inglés, sin mayúscula inicial ni punto final.
+
+**Ejemplos reales del proyecto:**
 
 ```bash
-docs(04-requirements): add scheduling user stories
-docs(09-microservices): register auth service
-fix(01-context): clarify project scope
-chore(08-uml): export sequence diagrams to SVG
-refactor(00-governance): split contribution rules by topic
+docs(00-governance): add git conventions
+docs(00-governance): add security rules
+docs(01-context): add SENA domain glossary
+docs(01-context): add project scope
+docs(02-domain): add entities and business rules
+docs(02-domain): add domain events catalog
+docs(04-requirements): add non-functional requirements
+docs(05-architecture): add architecture overview
+docs(09-microservices): add iam-service data model
+docs(09-microservices): add scheduling-service events
+docs(09-microservices): add audit-service runbook
+docs(09-microservices): fix audit-service append-only note
+docs(15-project-control): add open questions
 ```
 
-## Reglas de commits
+**Regla clave:** un commit, un cambio lógico. No mezclar cambios de distintos archivos o secciones en un mismo commit.
 
-- La descripción del commit va en inglés.
-- El contenido de los documentos puede estar en español.
-- Los commits deben ser pequeños y trazables.
-- Si se documentan varios microservicios, usar un commit por microservicio cuando sea posible.
-- No mezclar cambios funcionales de varias secciones sin razón clara.
+---
 
-## Hotfix en main
+### Flujo completo de trabajo
 
-Cuando se detecta un error crítico en `main` que no puede esperar el flujo normal de release:
+Este es el proceso que se sigue cada vez que se va a crear o modificar un documento:
 
-| Caso | Rama base | Formato | Ejemplo |
-|------|-----------|---------|---------|
-| Corrección urgente en documentación estable | `main` | `fix/doc-<descripcion>` | `fix/doc-broken-api-contract` |
+```
+1. Pararse sobre develop actualizado
+   git checkout develop
+   git pull origin develop
 
-Flujo:
+2. Crear la rama hija
+   git checkout -b feat/doc-[sección]-[tema]
 
-```bash
-git checkout main
-git pull origin main
-git checkout -b fix/doc-broken-api-contract
+3. Crear o editar el documento
 
-git add <archivos>
-git commit -m "fix(07-api): correct broken endpoint reference in contract"
-git push origin fix/doc-broken-api-contract
+4. Hacer commit
+   git add [archivo]
+   git commit -m "docs(NN-seccion): mensaje"
+
+5. Hacer push
+   git push origin feat/doc-[sección]-[tema]
+
+6. Abrir Pull Request en GitHub
+   base:    develop
+   compare: feat/doc-[sección]-[tema]
+
+7. Pasar el checklist de definition-of-ready.md antes de pedir revisión
+
+8. Esperar aprobación de otra persona (no auto-aprobarse)
+
+9. Merge a develop
+
+10. Borrar la rama hija (botón "Delete branch" en GitHub)
 ```
 
-Abrir PR directo de `fix/doc-*` hacia `main`. Una vez mergeado, aplicar el mismo fix a `qa` y `dev` con cherry-pick:
+---
 
-```bash
-git checkout qa
-git pull origin qa
-git cherry-pick <commit-sha>
-git push origin qa
+### Reglas generales
+
+- Nunca hacer push directo a `develop`, `qa`, `stg` ni `main`.
+- Nunca trabajar en una rama hija de otra rama hija. Siempre desde `develop`.
+- Una rama hija resuelve un tema específico. No acumular cambios de múltiples archivos no relacionados en una misma rama.
+- Si una rama lleva más de una semana sin PR, debe actualizarse con `develop` para evitar conflictos:
+  ```bash
+  git checkout develop
+  git pull origin develop
+  git checkout feat/doc-[sección]-[tema]
+  git merge develop
+  ```
+- Una vez mergeada, la rama hija se elimina. No se reutilizan ramas cerradas.
+
+---
+
+### Checklist antes de abrir un PR
+
+Antes de abrir cualquier PR, verificar:
+
 ```
+[ ] La rama nació desde develop (no desde otra rama hija)
+[ ] El nombre de la rama sigue el patrón feat/doc o fix/doc
+[ ] Los commits siguen el formato docs(NN-seccion): mensaje
+[ ] El documento cumple la estructura mínima de documentation-rules.md
+[ ] El archivo está enlazado desde el README.md de su sección
+[ ] No se subieron secretos, contraseñas ni datos personales
+```
+
+Para el checklist completo de cierre, ver [definition-of-done.md](./definition-of-done.md).
+
+## Referencias
+
+- [documentation-rules.md](./documentation-rules.md)
+- [definition-of-ready.md](./definition-of-ready.md)
+- [definition-of-done.md](./definition-of-done.md)
+- [microservices-documentation.md](./microservices-documentation.md)
