@@ -1,4 +1,4 @@
-# Reglas de documentación
+# Reglas de documentación ( Qué define: la estructura mínima obligatoria de cualquier documento del repo. ) 
 
 > Estado: 🟡 En progreso | Última actualización: 2026-06-21
 > Autor: Por definir | Equipo: Por definir
