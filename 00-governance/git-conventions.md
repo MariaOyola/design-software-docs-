@@ -30,7 +30,35 @@ develop → qa → stg → main
 
 Cada avance requiere que la rama destino acepte un PR desde la rama origen. Nunca se hace push directo.
 
-> ⚠️ Pendiente definir con el equipo: ¿quién decide cuándo `develop` pasa a `qa`? ¿Es manual por el líder técnico o hay un criterio automático?
+> ⚠️ Pendiente definir con el equipo:
+>
+> ¿Quién decide cuándo `develop` pasa a `qa`?
+>
+> ¿Es manual por el líder técnico o existe un criterio automático?
+
+---
+
+## Opción - Por hito completo
+
+`develop` pasa a `qa` cuando una sección completa está terminada; no se valida archivo por archivo.
+
+### Ejemplo
+
+```text
+Toda la carpeta 00-governance
+mergeada a develop
+        ↓
+Se abre Pull Request
+develop → qa
+        ↓
+      Maria revisa
+        ↓
+Aprobado
+        ↓
+qa → stg → main
+```
+
+Por esta razón, es más conveniente revisar y aprobar toda la sección completa antes de promoverla a `qa`.
 
 ---
 
