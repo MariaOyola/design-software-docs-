@@ -1,6 +1,6 @@
 # Definition of Ready
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-21
+> Estado: 🟢 En progreso | Última actualización: 2026-06-21
 > Autor: Maria  | Equipo: Por definir
 
 Este documento define el checklist que el **autor** debe completar antes de abrir un Pull Request. Si algún ítem no se cumple, el documento no está listo para revisión. Para el checklist de cierre, ver [definition-of-done.md](./definition-of-done.md).

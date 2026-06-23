@@ -1,6 +1,6 @@
 # Reglas de seguridad
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-21
+> Estado: 🟢 En progreso | Última actualización: 2026-06-21
 > Autor: Maria | Equipo: Por definir
 
 Este documento define qué información nunca puede aparecer en ningún archivo de este repositorio, sin excepción. Para convenciones de Git, ver [git-conventions.md](./git-conventions.md). Para reglas generales de documentación, ver [documentation-rules.md](./documentation-rules.md).

@@ -1,7 +1,7 @@
 # 00 · Gobernanza de la documentación
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-21
-> Autor: Por definir | Equipo: Por definir
+> Estado: 🟢 En progreso | Última actualización: 2026-06-21
+> Autor: Maria | Equipo: Por definir
 
 Esta carpeta define cómo se trabaja en este repositorio de documentación. Debe leerse antes de crear, editar o revisar cualquier documento del proyecto.
 
@@ -15,12 +15,12 @@ Sin reglas claras, equipos de varias personas generan inconsistencias inevitable
 
 | Archivo | Qué define | Cuándo consultarlo | Estado |
 |---|---|---|---|
-| `documentation-rules.md` | Estructura mínima de todo documento, naming, estados, índices y diagramas | Antes de crear cualquier documento | 🟡 |
-| `git-conventions.md` | Nomenclatura de ramas, formato de commits y flujo `develop → qa → stg → main` | Antes de crear una rama o hacer un commit | 🟡 |
-| `definition-of-ready.md` | Checklist que el autor pasa antes de abrir un PR | Antes de abrir un Pull Request | 🟡 |
-| `definition-of-done.md` | Checklist que el revisor pasa antes de aprobar un merge | Antes de aprobar y mergear un PR | 🟡 |
-| `security-rules.md` | Qué nunca puede aparecer en la documentación y cómo actuar si ya se subió | Antes de hacer push de cualquier archivo | 🟡 |
-| `microservices-documentation.md` | Flujo completo para documentar cada uno de los 9 microservicios | Cuando se va a documentar un servicio nuevo | 🟡 |
+| `documentation-rules.md` | Estructura mínima de todo documento, naming, estados, índices y diagramas | Antes de crear cualquier documento | 🟢 |
+| `git-conventions.md` | Nomenclatura de ramas, formato de commits y flujo `develop → qa → stg → main` | Antes de crear una rama o hacer un commit | 🟢 |
+| `definition-of-ready.md` | Checklist que el autor pasa antes de abrir un PR | Antes de abrir un Pull Request | 🟢 |
+| `definition-of-done.md` | Checklist que el revisor pasa antes de aprobar un merge | Antes de aprobar y mergear un PR | 🟢 |
+| `security-rules.md` | Qué nunca puede aparecer en la documentación y cómo actuar si ya se subió | Antes de hacer push de cualquier archivo | 🟢 |
+| `microservices-documentation.md` | Flujo completo para documentar cada uno de los 9 microservicios | Cuando se va a documentar un servicio nuevo | 🟢 |
 
 ### Flujo rápido de referencia
 
@@ -48,7 +48,7 @@ Sin reglas claras, equipos de varias personas generan inconsistencias inevitable
 
 | Sección | Descripción | Estado |
 |---|---|---|
-| `00-governance` | Reglas del repositorio | 🟡 |
+| `00-governance` | Reglas del repositorio | 🟢 |
 | `01-context` | Contexto y alcance del proyecto | 🔴 |
 | `02-domain` | Dominio SENA: entidades, reglas y eventos | 🔴 |
 | `03-product` | Visión, roadmap y backlog de producto | 🔴 |

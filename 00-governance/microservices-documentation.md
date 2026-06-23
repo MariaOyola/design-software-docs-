@@ -1,7 +1,7 @@
 # Guía de documentación de microservicios
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-21
-> Autor: Por definir | Equipo: Por definir
+> Estado: 🟢 En progreso | Última actualización: 2026-06-21
+> Autor: Maria | Equipo: Por definir
 
 Este documento define cuándo y cómo registrar documentación de microservicios. Para reglas generales de documentación, ver [documentation-rules.md](./documentation-rules.md). Para convenciones de Git, ver [git-conventions.md](./git-conventions.md).
 
