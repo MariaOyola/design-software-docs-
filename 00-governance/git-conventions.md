@@ -1,6 +1,6 @@
 # Convenciones de Git
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-21
+> Estado: 🟢 En progreso | Última actualización: 2026-06-21
 > Autor: Maria | Equipo: Por definir
 
 Este documento define cómo se trabaja con Git en este repositorio: nomenclatura de ramas, formato de commits y el flujo de trabajo entre ramas. Para reglas de documentos, ver [documentation-rules.md](./documentation-rules.md).

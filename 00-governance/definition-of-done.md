@@ -1,6 +1,6 @@
 # Definition of Done
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-21
+> Estado: 🟢 En progreso | Última actualización: 2026-06-21
 > Autor: Maria | Equipo: Por definir
 
 Este documento define el checklist que se debe completar antes de hacer merge de un PR a `develop`. Lo aplica el revisor, o el autor si trabaja solo. Para el checklist previo a abrir el PR, ver [definition-of-ready.md](./definition-of-ready.md).
