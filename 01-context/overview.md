@@ -1,6 +1,6 @@
 # Overview
 
-> Estado: 🟡 En progreso | Última actualización: 2026-23-06
+> Estado: 🟡 En progreso | Última actualización: 2026-06-23
 > Autor: Maria | Equipo: Por definir
 
 ## Contexto institucional

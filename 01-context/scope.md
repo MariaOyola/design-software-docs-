@@ -1,7 +1,7 @@
 # Alcance
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-21
-> Autor: Por definir | Equipo: Por definir
+> Estado: 🟡 En progreso |Última actualización: 2026-06-24
+> Autor: Maria | Equipo: Por definir
 
 ## Contexto
 
