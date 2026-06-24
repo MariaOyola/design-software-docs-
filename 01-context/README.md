@@ -1,6 +1,6 @@
 # Contexto
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-24
+> Estado: 🟢 En progreso | Última actualización: 2026-06-24
 > Autor: Maria | Equipo: Por definir
 
 ## Contexto
@@ -13,9 +13,9 @@ Esta carpeta describe el problema que el sistema resuelve, los límites de lo qu
 
 | Archivo | Descripción | Estado |
 |---|---|---|
-| [overview.md](./overview.md) | Contexto institucional del SENA, problema que resuelve el sistema y objetivos generales | 🟡 |
-| [scope.md](./scope.md) | Qué hace el sistema, qué no hace, supuestos y restricciones | 🟡 |
-| [glossary.md](./glossary.md) | Glosario oficial de términos del dominio SENA y del sistema | 🟡 |
+| [overview.md](./overview.md) | Contexto institucional del SENA, problema que resuelve el sistema y objetivos generales | 🟢 |
+| [scope.md](./scope.md) | Qué hace el sistema, qué no hace, supuestos y restricciones | 🟢 |
+| [glossary.md](./glossary.md) | Glosario oficial de términos del dominio SENA y del sistema | 🟢 |
 
 ### Flujo de lectura sugerido
 

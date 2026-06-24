@@ -1,6 +1,6 @@
 # Glosario
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-24
+> Estado: 🟢 En progreso | Última actualización: 2026-06-24
 > Autor: Maria | Equipo: Por definir
 
 ## Contexto
