@@ -13,9 +13,9 @@ Esta carpeta documenta la intención del producto, su evolución planificada y e
 
 | Archivo | Descripción | Estado |
 |---|---|---|
-| [vision.md](./vision.md) | Visión, propuesta de valor y criterios de éxito del producto | 🟡 |
-| [roadmap.md](./roadmap.md) | Fases de construcción y dependencias entre microservicios | 🟡 |
-| [product-backlog.md](./product-backlog.md) | Épicas y funcionalidades priorizadas por documento | 🟡 |
+| [vision.md](./vision.md) | Visión, propuesta de valor y criterios de éxito del producto | 🟢 |
+| [roadmap.md](./roadmap.md) | Fases de construcción y dependencias entre microservicios | 🟢 |
+| [product-backlog.md](./product-backlog.md) | Épicas y funcionalidades priorizadas por documento | 🟢 |
 
 ### Flujo de lectura sugerido
 
