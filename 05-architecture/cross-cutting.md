@@ -1,6 +1,7 @@
 # Aspectos Transversales
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-21
+> Estado: 🟢 En progreso | Última actualización: 2026-06-28
+> Autor: Maria 
 > Autor: Por definir | Equipo: Por definir
 
 ## Contexto

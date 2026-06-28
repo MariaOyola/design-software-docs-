@@ -1,6 +1,6 @@
 # Arquitectura
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-21
+> Estado: 🟢 En progreso | Última actualización: 2026-06-28
 > Autor: Por definir | Equipo: Por definir
 
 ## Contexto
@@ -13,10 +13,10 @@ Describe la arquitectura del sistema de gestión de horarios SENA, su topología
 
 | Archivo | Descripción | Estado |
 |---|---|---|
-| [overview.md](./overview.md) | Vista general de arquitectura y componentes | 🟡 |
-| [deployment.md](./deployment.md) | Topología de despliegue y ambientes | 🟡 |
-| [cross-cutting.md](./cross-cutting.md) | Seguridad, logging, auditoría y manejo de errores | 🟡 |
-| [decisions/](./decisions/) | Registro de decisiones de arquitectura (ADR) | 🔴 |
+| [overview.md](./overview.md) | Vista general de arquitectura y componentes | 🟢 |
+| [deployment.md](./deployment.md) | Topología de despliegue y ambientes | 🟢 |
+| [cross-cutting.md](./cross-cutting.md) | Seguridad, logging, auditoría y manejo de errores | 🟢 |
+| [decisions/](./decisions/) | Registro de decisiones de arquitectura (ADR) | 🟡 |
 
 ### Architecture Decision Records (ADR)
 
