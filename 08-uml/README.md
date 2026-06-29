@@ -1,21 +1,46 @@
 # UML
 
-> Estado: 🔴 Pendiente | Última actualización: 2026-06-16
+> Estado: 🟡 En progreso | Última actualización: 2026-06-21
 > Autor: Por definir | Equipo: Por definir
 
-Repositorio de diagramas UML y arquitectura visual. Todo diagrama debe tener fuente editable y exportación revisable.
+## Contexto
 
-## Convenciones
+Repositorio de diagramas UML y arquitectura visual del sistema de gestión de horarios SENA. Todo diagrama debe tener fuente editable y exportación revisable. No se sube solo la imagen exportada sin su fuente.
 
-- Fuentes en `diagrams/source/` con extensión `.wsd` o `.puml`
-- Exportaciones en `diagrams/exports/` con formato `.svg` preferido
-- Nombre de archivo: `<dominio>-<tipo>.<ext>` (ej: `horario-sequence.wsd`)
-- Todo diagrama debe registrarse en [diagram-index.md](./diagram-index.md)
+## Contenido
 
-## Tipos de diagrama
+### Archivos de esta carpeta
 
-| Tipo | Archivo fuente |
-|------|---------------|
+| Archivo | Descripción | Estado |
+|---|---|---|
+| [diagram-index.md](./diagram-index.md) | Índice de todas las fuentes y exportaciones registradas | 🟡 |
+| [diagrams/source/](./diagrams/source/) | Fuentes editables de diagramas (`.wsd`, `.puml`) | 🔴 |
+| [diagrams/exports/](./diagrams/exports/) | Exportaciones en `.svg` o `.png` | 🔴 |
+
+### Convenciones
+
+**Nombres de archivo:**
+```
+<dominio>-<tipo>.<ext>
+
+Ejemplos:
+  horario-sequence.wsd
+  sistema-deployment.wsd
+  iam-component.wsd
+  ficha-state.wsd
+  scheduling-activity.wsd
+```
+
+**Ubicación:**
+```
+Fuentes  → diagrams/source/   (.wsd o .puml)
+Exports  → diagrams/exports/  (.svg preferido sobre .png)
+```
+
+**Tipos de diagrama soportados:**
+
+| Tipo | Sufijo de archivo |
+|---|---|
 | Casos de uso | `*-use-case.wsd` |
 | Clases | `*-class.wsd` |
 | Secuencia | `*-sequence.wsd` |
@@ -24,10 +49,35 @@ Repositorio de diagramas UML y arquitectura visual. Todo diagrama debe tener fue
 | Componentes | `*-component.wsd` |
 | Despliegue | `*-deployment.wsd` |
 
-## Archivos
+### Flujo para agregar un diagrama
 
-| Archivo | Descripción | Estado |
-|---------|-------------|--------|
-| [diagram-index.md](./diagram-index.md) | Índice de fuentes y exportaciones de diagramas | 🔴 |
-| [diagrams/source/](./diagrams/source/) | Fuentes editables de diagramas | 🔴 |
-| [diagrams/exports/](./diagrams/exports/) | Exportaciones SVG o PNG | 🔴 |
+```
+1. Crear la fuente editable en diagrams/source/
+   con el nombre correcto: <dominio>-<tipo>.wsd
+
+2. Exportar a diagrams/exports/
+   preferir .svg sobre .png
+
+3. Registrar en diagram-index.md:
+   - nombre del diagrama
+   - tipo
+   - ruta a la fuente
+   - ruta al export
+   - fecha
+
+4. Commit en la rama correspondiente:
+   feat/doc-uml-[nombre-diagrama]
+```
+
+### Relación con otras secciones
+
+| Si necesitas saber... | Ve a... |
+|---|---|
+| Decisiones de arquitectura que originan un diagrama | [05-architecture/decisions/](../05-architecture/decisions/) |
+| Vista general del sistema | [05-architecture/overview.md](../05-architecture/overview.md) |
+| Topología de despliegue | [05-architecture/deployment.md](../05-architecture/deployment.md) |
+
+## Referencias
+
+- [diagram-index.md](./diagram-index.md)
+- [00-governance/documentation-rules.md](../00-governance/documentation-rules.md)
