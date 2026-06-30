@@ -1,7 +1,6 @@
 # Requisitos
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-21
-> Autor: Por definir | Equipo: Por definir
+> Estado:  🟢 En progreso | Última actualización: Última actualización: 2026-06-27 | Equipo: Por definir | Equipo: Por definir
 
 ## Contexto
 
@@ -13,10 +12,10 @@ Centraliza los requisitos funcionales, no funcionales, historias de usuario y tr
 
 | Archivo | Descripción | Estado |
 |---|---|---|
-| [functional.md](./functional.md) | Requisitos funcionales organizados por microservicio | 🟡 |
-| [non-functional.md](./non-functional.md) | Requisitos de calidad, seguridad, rendimiento y operación | 🟡 |
-| [user-stories.md](./user-stories.md) | Historias de usuario con tareas técnicas por microservicio | 🟡 |
-| [traceability-matrix.md](./traceability-matrix.md) | Relación entre HU, requisitos, microservicios y pruebas | 🟡 |
+| [functional.md](./functional.md) | Requisitos funcionales organizados por microservicio | 🟢 |
+| [non-functional.md](./non-functional.md) | Requisitos de calidad, seguridad, rendimiento y operación | 🟢 |
+| [user-stories.md](./user-stories.md) | Historias de usuario con tareas técnicas por microservicio | 🟢 |
+| [traceability-matrix.md](./traceability-matrix.md) | Relación entre HU, requisitos, microservicios y pruebas | 🟢 |
 
 ### Flujo de lectura sugerido
 

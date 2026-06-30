@@ -1,7 +1,6 @@
 # Historias de Usuario
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-21
-> Autor: Por definir | Equipo: Por definir
+> Estado:  🟢 En progreso | Última actualización: Última actualización: 2026-06-27 | Equipo: Por definir | Equipo: Por definir
 
 ## Contexto
 

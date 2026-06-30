@@ -49,7 +49,7 @@ Sin reglas claras, equipos de varias personas generan inconsistencias inevitable
 | Sección | Descripción | Estado |
 |---|---|---|
 | `00-governance` | Reglas del repositorio | 🟢 |
-| `01-context` | Contexto y alcance del proyecto | 🟡gitn |
+| `01-context` | Contexto y alcance del proyecto | 🟡 |
 | `02-domain` | Dominio SENA: entidades, reglas y eventos | 🔴 |
 | `03-product` | Visión, roadmap y backlog de producto | 🔴 |
 | `04-requirements` | Requisitos funcionales y no funcionales | 🔴 |
