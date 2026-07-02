@@ -1,7 +1,7 @@
 # Preguntas abiertas
 
-> Estado: 🟡 En progreso | Última actualización: 2026-06-16
-> Autor: Por definir | Equipo: Arquitectura / Gestión
+> Estado: 🟡  En progreso | Última actualización: 2026-06-1
+> Autor: Maria| | Equipo: Arquitectura / Gestión
 
 ## Flujo de resolución
 
